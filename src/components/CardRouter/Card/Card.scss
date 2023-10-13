@@ -1,0 +1,150 @@
+.birthdayCard {
+  position: relative;
+  width: 15.625rem;
+  height: 21.875rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(156.25rem);
+  transition: 1s;
+
+  &:hover {
+    transform: perspective(156.25rem) rotate(5deg);
+    box-shadow: inset 6.25rem 1.25rem 6.25rem #00000033,
+      0 0.625rem 6.25rem #00000080;
+
+    .cardFront {
+      transform: rotateY(-160deg);
+    }
+
+    .happy {
+      visibility: hidden;
+    }
+  }
+
+  .cardFront {
+    position: relative;
+    background-color: #ffeef6;
+    width: 15.625rem;
+    height: 21.875rem;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 6.25rem 1.25rem 6.25rem #00000033,
+      1.875rem 0 3.125rem #00000066;
+    transition: 0.6s;
+  }
+
+  .happy {
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    margin: 1.875rem;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    transition: 0.1s;
+    backface-visibility: visible;
+  }
+
+  .balloons {
+    position: absolute;
+
+    .balloonOne,
+    .balloonTwo,
+    .balloonThree,
+    .balloonFour {
+      position: absolute;
+      width: 5.3125rem;
+      height: 5.9375rem;
+      border-radius: 50%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0.0625rem;
+        height: 9.6875rem;
+        background-color: #1e1e1e;
+        top: 5.9375rem;
+        left: 2.6875rem;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        border-right: 0.4375rem solid transparent;
+        border-left: 0.4375rem solid transparent;
+        top: 5.875rem;
+        left: 2.3125rem;
+      }
+    }
+
+    .balloonOne {
+      background-color: #ef476fb3;
+      left: -0.625rem;
+      top: 3.125rem;
+
+      &:after {
+        border-bottom: 0.625rem solid #ef476f;
+      }
+    }
+
+    .balloonTwo {
+      background-color: rgb(6, 214, 160, 0.7);
+      left: 3.125rem;
+      top: 1.25rem;
+
+      &:after {
+        border-bottom: 0.625rem solid #06d6a0;
+      }
+    }
+
+    .balloonThree {
+      background-color: rgb(255, 209, 102, 0.7);
+      left: 6.875rem;
+      top: 3.125rem;
+
+      &:after {
+        border-bottom: 0.625rem solid #ffd166;
+      }
+    }
+
+    .balloonFour {
+      background-color: #118ab2b3;
+      left: 10.625rem;
+      top: 1.25rem;
+
+      &:after {
+        border-bottom: 0.625rem solid #118ab2;
+      }
+    }
+  }
+
+  .cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 15.625rem;
+    height: 21.875rem;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 6.25rem 1.25rem 6.25rem #00000033;
+
+    p {
+      font-family: var(--cursive-font);
+      margin: 2.5rem;
+      color: #333;
+    }
+
+    .back {
+      font-family: Tahoma, sans-serif;
+      color: #333;
+      text-align: center;
+      margin: 1.875rem;
+      outline-color: #333;
+      outline-style: dotted;
+    }
+
+    .name {
+      position: absolute;
+      color: #333;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
