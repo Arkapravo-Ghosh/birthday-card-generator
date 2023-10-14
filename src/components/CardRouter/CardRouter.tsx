@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import LandingPage from "../../pages/LandingPage/LandingPage";
 import Card from "./Card/Card";
@@ -18,9 +17,7 @@ const CardComponent = () => {
     messages: (queryParams.get("messages") || defaultMessage).split("|"),
   };
 
-  useEffect(() => {
-    document.title = `Happy Birthday ${cardData.name}!`;
-  }, []);
+  document.title = `Happy Birthday ${cardData.name}!`;
 
   return <Card {...cardData} />;
 };
