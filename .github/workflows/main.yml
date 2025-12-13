@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 18
       - name: Installing Dependecies
-        run: npm ci
+        run: npm i --legacy-peer-deps
       - name: Comfiguring git
         run: |
           git config --global user.name '${{ github.repository_owner }}'
